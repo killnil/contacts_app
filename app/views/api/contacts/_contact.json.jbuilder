@@ -9,6 +9,10 @@ json.email contact.email
 json.phone_number contact.phone_number
 json.bio contact.bio
 
+json.groups do 
+  json.array! contact.groups, partial: 'api/groups/group', as: :group
+end
+
 json.formatted do
   json.created_at contact.friendly_created_at
   json.phone_number contact.japan_phone_number
